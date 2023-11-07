@@ -1,9 +1,9 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
-import '../../Login.css'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function Login() {
+
+function Register () {
     const [credentials, setCredentials] = useState({email: '', password: ''});
     const navigate = useNavigate();
 
@@ -23,7 +23,7 @@ function Login() {
         console.log(credentials)
 
         try {
-            const response = await axios.post("http://localhost:8080/api/v1/auth/authenticate", credentials)
+            const response = await axios.post("http://localhost:8080/api/v1/auth/register", credentials)
             const jwtToken = response.data.token;
             
             if (jwtToken != null) {
@@ -39,10 +39,6 @@ function Login() {
         }
         
     };
-
-    const handleRegisterButton = () => {
-        navigate("/register")
-    }
 
 
     return (
@@ -64,11 +60,10 @@ function Login() {
                 onChange = {handleChange}
                 placeholder = 'Password'>
                 </input>
-                <button type = 'submit'>Login</button>
-                <button onClick = {handleRegisterButton}>Register</button>
+                <button type = 'submit'>Register</button>
             </form>
         </div>
     )
 }
 
-export default Login;
+export default Register;

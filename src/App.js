@@ -5,6 +5,7 @@ import Login from './components/auth/Login';
 import Dashboard from './components/DashBoard';
 import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
 import AddTodo from './components/AddTodo';
+import Register from './components/Register';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/add" element={<AddTodo />}/>
+        <Route path="/register" element={<Register/>}/>
       </Routes>
     </BrowserRouter>
   );
