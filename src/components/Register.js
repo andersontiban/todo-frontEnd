@@ -23,7 +23,7 @@ function Register () {
         console.log(credentials)
 
         try {
-            const response = await axios.post("http://localhost:8080/api/v1/auth/register", credentials)
+            const response = await axios.post("https://todo-list-springboot.onrender.com/api/v1/auth/register", credentials)
             const jwtToken = response.data.token;
             
             if (jwtToken != null) {

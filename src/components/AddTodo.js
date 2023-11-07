@@ -30,7 +30,7 @@ function AddTodo() {
             }
 
 
-            const response = await axios.post("http://localhost:8080/api/v1/new", todoData, {
+            const response = await axios.post("https://todo-list-springboot.onrender.com/api/v1/new", todoData, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
